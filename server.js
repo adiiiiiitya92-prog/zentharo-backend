@@ -9,7 +9,11 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://mellow-kheer-90fc31.netlify.app", "http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes
